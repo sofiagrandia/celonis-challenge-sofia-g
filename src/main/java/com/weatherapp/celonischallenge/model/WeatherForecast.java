@@ -1,4 +1,4 @@
-package com.weatherapp.celonischallenge.controller;
+package com.weatherapp.celonischallenge.model;
 
 public class WeatherForecast {
     private double maxTemp;
