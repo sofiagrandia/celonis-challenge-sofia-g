@@ -1,23 +1,14 @@
-package com.weatherapp.celonischallenge.model;
+package com.weatherapp.celonischallenge.dto;
 
-import jakarta.persistence.Entity;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import com.weatherapp.celonischallenge.model.WeatherForecast;
 
 import java.time.LocalDate;
 
-@Entity
-public class CityWeather {
+public class CityWeatherDto {
     private String city;
     private LocalDate date;
     private WeatherForecast todayWeather;
     private WeatherForecast tomorrowWeather;
-
-    public CityWeather(String city, LocalDate date, WeatherForecast todayWeather, WeatherForecast tomorrowWeather) {
-        this.city = city;
-        this.date = date;
-        this.todayWeather = todayWeather;
-        this.tomorrowWeather = tomorrowWeather;
-    }
 
     // Getters and setters
     public String getCity() {

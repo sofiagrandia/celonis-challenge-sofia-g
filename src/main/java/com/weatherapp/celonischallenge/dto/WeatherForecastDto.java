@@ -1,22 +1,13 @@
-package com.weatherapp.celonischallenge.model;
+package com.weatherapp.celonischallenge.dto;
 
-import jakarta.persistence.Entity;
+public class WeatherForecastDto {
 
-@Entity
-public class WeatherForecast {
     private double maxTemp;
     private double minTemp;
     private double totalPrecipitation;
     private int averageHumidity;
     private String condition;
 
-    public WeatherForecast(double maxTemp, double minTemp, double totalPrecipitation, int averageHumidity, String condition) {
-        this.maxTemp = maxTemp;
-        this.minTemp = minTemp;
-        this.totalPrecipitation = totalPrecipitation;
-        this.averageHumidity = averageHumidity;
-        this.condition= condition;
-    }
 
     // Getters and setters
     public double getMaxTemp() {
