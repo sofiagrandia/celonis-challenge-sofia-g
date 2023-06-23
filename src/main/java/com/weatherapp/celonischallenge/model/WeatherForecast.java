@@ -1,9 +1,14 @@
 package com.weatherapp.celonischallenge.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
 
 @Entity
+@Table(name = "weatherForecast")
 public class WeatherForecast {
+    @Id
+    private Integer forecastId;
     private double maxTemp;
     private double minTemp;
     private double totalPrecipitation;
