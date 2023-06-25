@@ -1,30 +1,21 @@
 package com.weatherapp.celonischallenge.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import com.weatherapp.celonischallenge.client.WeatherApiForecastDay;
 
-import java.time.LocalDate;
+/*Represents the forcasts of today and tomorrow for a single city. Includes the region*/
 
-@Entity
-@Table(name = "cityWeather")
 public class CityWeather {
-    @Id
-    private Integer cityWeatherId;
+
+
     private String city;
-    private LocalDate date;
-    private Integer todayWeather;
-    private Integer tomorrowWeather;
+    private String region;
+    private WeatherApiForecastDay todayWeather;
 
-    public CityWeather(String city, LocalDate date, Integer todayWeather, Integer tomorrowWeather) {
-        this.city = city;
-        this.date = date;
-        this.todayWeather = todayWeather;
-        this.tomorrowWeather = tomorrowWeather;
-    }
+    private WeatherApiForecastDay tomorrowWeather;
 
-    // Getters and setters
+    //Getters and setters
+
+
     public String getCity() {
         return city;
     }
@@ -33,27 +24,31 @@ public class CityWeather {
         this.city = city;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getRegion() {
+        return region;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setRegion(String region) {
+        this.region = region;
     }
 
-    public Integer getTodayWeather() {
+    public WeatherApiForecastDay getTodayWeather() {
         return todayWeather;
     }
 
-    public void setTodayWeather(Integer todayWeather) {
+    public void setTodayWeather(WeatherApiForecastDay todayWeather) {
         this.todayWeather = todayWeather;
     }
 
-    public Integer getTomorrowWeather() {
+    public WeatherApiForecastDay getTomorrowWeather() {
         return tomorrowWeather;
     }
 
-    public void setTomorrowWeather(Integer tomorrowWeather) {
+    public void setTomorrowWeather(WeatherApiForecastDay tomorrowWeather) {
         this.tomorrowWeather = tomorrowWeather;
     }
+
+
 }
+
+

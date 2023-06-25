@@ -1,13 +1,13 @@
 package com.weatherapp.celonischallenge.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
-@Entity
-@Table(name = "weatherForecast")
+
+/*Represents the weather forecast, to store only the weather information, not the city
+* This way I can use this representation for day1 and day2 and associate them to a single city*/
+
 public class WeatherForecast {
-    @Id
+
     private Integer forecastId;
     private double maxTemp;
     private double minTemp;
@@ -15,7 +15,8 @@ public class WeatherForecast {
     private int averageHumidity;
     private String condition;
 
-    public WeatherForecast(double maxTemp, double minTemp, double totalPrecipitation, int averageHumidity, String condition) {
+    public WeatherForecast(Integer forecastId, double maxTemp, double minTemp, double totalPrecipitation, int averageHumidity, String condition) {
+        this.forecastId = forecastId;
         this.maxTemp = maxTemp;
         this.minTemp = minTemp;
         this.totalPrecipitation = totalPrecipitation;
@@ -24,6 +25,15 @@ public class WeatherForecast {
     }
 
     // Getters and setters
+
+    public Integer getForecastId() {
+        return forecastId;
+    }
+
+    public void setForecastId(Integer forecastId) {
+        this.forecastId = forecastId;
+    }
+
     public double getMaxTemp() {
         return maxTemp;
     }
