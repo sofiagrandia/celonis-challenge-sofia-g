@@ -1,8 +1,20 @@
-Sure! Here's an example README file for your project:
-
 # WeatherApp
+#### Sofía González Grandía
 
 WeatherApp is a web application that provides weather forecasts for different cities.
+
+### Package organisation (quick overview)
+- main
+  - java
+    - com.weatherapp.celonischallenge
+      - Client: all the information I obtained from the wether API. Approximately a class for every level of information obtained from the JSON.
+      - Config: configuration of RestTemplate bean.
+      - Controller
+      - Model: data models
+      - Service
+      - Storage: persistence layer - in memory
+- test: unit tests
+
 ## Prerequisites
 
 Before running the application, make sure you have the following installed:
